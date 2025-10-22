@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SwasthVedha — PostgreSQL Connection Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 40px; line-height: 1.6; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    pre { background: #f6f8fa; padding: 12px; border-radius: 6px; overflow-x: auto; }
+    code { background: #f6f8fa; padding: 2px 4px; border-radius: 4px; }
+    h1, h2, h3 { color: #0f172a; }
+    hr { border: 0; border-top: 1px solid #e5e7eb; margin: 24px 0; }
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid #e5e7eb; padding: 6px 10px; }
+  </style>
+</head>
+<body>
+<h1 id="swasthvedha-backend-postgresql-connection-guide">SwasthVedha Backend — PostgreSQL Connection Guide</h1>
+<p>Use this page as a PDF (Print to PDF) for your records.</p>
+<hr />
+<h2 id="1-env-configuration">1) .env configuration</h2>
+<p>Keep the individual password plain, but URL‑encode it only inside the connection URL.</p>
+<div class="codehilite"><pre><span></span><code><span class="cp"># Components</span>
+<span class="n">DB_USER</span><span class="o">=</span><span class="n">swasthvedha</span>
+<span class="n">DB_PASSWORD</span><span class="o">=</span><span class="n">Chethan</span><span class="mi">@12345</span>
+<span class="n">DB_HOST</span><span class="o">=</span><span class="n">localhost</span>
+<span class="n">DB_PORT</span><span class="o">=</span><span class="mi">5432</span>
+<span class="n">DB_NAME</span><span class="o">=</span><span class="n">SwasthVedha</span>
+
+<span class="cp"># Final URL (password URL‑encoded: @ -&gt; %40)</span>
+<span class="n">DATABASE_URL</span><span class="o">=</span><span class="n">postgresql</span><span class="o">+</span><span class="n">psycopg2</span><span class="o">:</span><span class="c1">//swasthvedha:Chethan%4012345@localhost:5432/SwasthVedha</span>
+</code></pre></div>
+
+<p>Notes
+- Only encode special characters when they appear inside <code>DATABASE_URL</code>.
+- Examples to encode: <code>@</code> -&gt; <code>%40</code>, <code>:</code> -&gt; <code>%3A</code>, <code>/</code> -&gt; <code>%2F</code>, <code>#</code> -&gt; <code>%23</code>.</p>
+<hr />
+<h2 id="2-createverify-db-and-role-in-pgadmin">2) Create/verify DB and role in pgAdmin</h2>
+<p>Database
+- Name: <code>SwasthVedha</code> (exact case if you created it with capitals)
+- Owner: <code>swasthvedha</code></p>
+<p>Role (user)
+- Role name: <code>swasthvedha</code>
+- Login: enabled
+- Password: <code>Chethan@12345</code></p>
+<p>Connection test in pgAdmin (Server &gt; Register)
+- Host: <code>localhost</code>
+- Port: <code>5432</code>
+- Maintenance DB: <code>postgres</code>
+- Username: <code>swasthvedha</code>
+- Password: <code>Chethan@12345</code></p>
+<hr />
+<h2 id="3-run-the-backend-with-env-file">3) Run the backend with env file</h2>
+<p>PowerShell (from <code>backend/</code>):</p>
+<div class="codehilite"><pre><span></span><code><span class="n">uvicorn</span><span class="w"> </span><span class="n">main</span><span class="p">:</span><span class="n">app</span><span class="w"> </span><span class="o">--</span><span class="n">reload</span><span class="w"> </span><span class="o">--</span><span class="n">env</span><span class="o">-</span><span class="n">file</span><span class="w"> </span><span class="o">.</span><span class="n">env</span>
+</code></pre></div>
+
+<p>Then open:</p>
+<div class="codehilite"><pre><span></span><code>http://localhost:8000/db/ping
+</code></pre></div>
+
+<p>Expected: a JSON with database status.</p>
+<hr />
+<h2 id="4-troubleshooting">4) Troubleshooting</h2>
+<ul>
+<li>Error: <code>password authentication failed for user "postgres"</code></li>
+<li>Cause: you are connecting as <code>postgres</code> instead of <code>swasthvedha</code>.</li>
+<li>
+<p>Fix: update pgAdmin connection and <code>DATABASE_URL</code> to use <code>swasthvedha</code>.</p>
+</li>
+<li>
+<p>Error: <code>database "SwasthVedha" does not exist</code></p>
+</li>
+<li>
+<p>Create DB in pgAdmin (Databases &gt; Create &gt; Database) and set owner <code>swasthvedha</code>.</p>
+</li>
+<li>
+<p>Error: <code>FATAL: role "swasthvedha" does not exist</code></p>
+</li>
+<li>
+<p>Create role: pgAdmin &gt; Login/Group Roles &gt; Create &gt; Login/Group Role.</p>
+</li>
+<li>
+<p>Special characters in password</p>
+</li>
+<li>Keep plain in <code>DB_PASSWORD</code>; URL‑encode only within <code>DATABASE_URL</code>.</li>
+</ul>
+<hr />
+<h2 id="5-optional-cli-checks">5) Optional CLI checks</h2>
+<div class="codehilite"><pre><span></span><code>#<span class="w"> </span><span class="nv">Using</span><span class="w"> </span><span class="nv">psql</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">installed</span>
+<span class="nv">psql</span><span class="w"> </span><span class="o">-</span><span class="nv">h</span><span class="w"> </span><span class="nv">localhost</span><span class="w"> </span><span class="o">-</span><span class="nv">p</span><span class="w"> </span><span class="mi">5432</span><span class="w"> </span><span class="o">-</span><span class="nv">U</span><span class="w"> </span><span class="nv">swasthvedha</span><span class="w"> </span><span class="o">-</span><span class="nv">d</span><span class="w"> </span><span class="nv">SwasthVedha</span>
+</code></pre></div>
+
+<p>(Enter <code>Chethan@12345</code> when prompted.)</p>
+<hr />
+<p>Revision: 2025‑10‑18</p>
+</body>
+</html>

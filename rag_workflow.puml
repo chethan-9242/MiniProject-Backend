@@ -1,0 +1,46 @@
+@startuml RAG_Workflow_Simple
+!theme plain
+skinparam backgroundColor #f8f9fa
+skinparam activityBorderColor #2196F3
+skinparam activityBackgroundColor #E3F2FD
+
+title SwasthVedha RAG System Workflow
+
+start
+
+:📖 **Medical Knowledge Files**
+ayurvedic_symptoms_knowledge.json
+hair_config.json  
+general_ayurvedic_knowledge.json;
+
+:⬇️ **(processed into chunks)**
+Text chunking
+500 chars, 50 overlap;
+
+:🧮 **SentenceTransformer Embeddings**
+all-MiniLM-L6-v2 model;
+
+:⬇️ **(384-dimensional vectors)**
+High-quality semantic vectors;
+
+:💾 **ChromaDB Vector Storage**
+Persistent vector database
+Cosine similarity indexing;
+
+:⬇️ **(semantic search)**
+Find similar medical content;
+
+:🔍 **Relevant Context Retrieval**
+Top 5 matching documents
+Similarity threshold: 0.3;
+
+:⬇️ **(enhances prompts)**
+Add medical context to query;
+
+:🤖 **Flan-T5 Enhanced Responses**
+AI analysis + Ayurvedic wisdom
+Professional medical guidance;
+
+stop
+
+@enduml

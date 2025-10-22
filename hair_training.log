@@ -1,0 +1,160 @@
+2025-10-15 05:50:29,117 - INFO - Using device: cpu
+2025-10-15 05:50:29,195 - INFO - Dataset path: C:\Users\Chethan\Downloads\archive (16)\Hair Diseases - Final
+2025-10-15 05:50:29,195 - INFO - Output directory: models
+2025-10-15 05:50:29,197 - INFO - Data transformations configured
+2025-10-15 05:50:29,198 - INFO - Loading datasets...
+2025-10-15 05:50:29,265 - INFO - Train dataset: 9600 images
+2025-10-15 05:50:29,282 - INFO - Val dataset: 1200 images
+2025-10-15 05:50:29,300 - INFO - Test dataset: 1200 images
+2025-10-15 05:50:29,300 - INFO - Found 10 classes: ['Alopecia Areata', 'Contact Dermatitis', 'Folliculitis', 'Head Lice', 'Lichen Planus', 'Male Pattern Baldness', 'Psoriasis', 'Seborrheic Dermatitis', 'Telogen Effluvium', 'Tinea Capitis']
+2025-10-15 05:50:29,301 - INFO - Creating ResNet50 model with ImageNet pre-trained weights...
+2025-10-15 05:50:29,788 - INFO - Model created successfully
+2025-10-15 05:50:29,789 - INFO - Total parameters: 24,562,250
+2025-10-15 05:50:29,789 - INFO - Trainable parameters: 16,018,954
+2025-10-15 05:50:29,790 - INFO - Training setup completed
+2025-10-15 05:50:29,790 - INFO - Starting training for 25 epochs...
+2025-10-15 05:50:29,790 - INFO - Training on 9600 images
+2025-10-15 05:50:29,791 - INFO - Validating on 1200 images
+2025-10-15 05:50:29,820 - INFO - Epoch 1/25
+2025-10-15 05:50:29,821 - INFO - ----------------------------------------
+2025-10-15 05:52:49,477 - INFO - Using device: cpu
+2025-10-15 05:52:49,477 - INFO - Starting Hair Disease Classification Training
+2025-10-15 05:52:49,478 - INFO - Dataset path: C:\Users\Chethan\Downloads\archive (16)\Hair Diseases - Final
+2025-10-15 05:52:49,478 - INFO - Output directory: models
+2025-10-15 05:52:49,479 - INFO - Data transformations configured
+2025-10-15 05:52:49,479 - INFO - Loading datasets...
+2025-10-15 05:52:49,512 - INFO - Train dataset: 9600 images
+2025-10-15 05:52:49,530 - INFO - Val dataset: 1200 images
+2025-10-15 05:52:49,551 - INFO - Test dataset: 1200 images
+2025-10-15 05:52:49,552 - INFO - Found 10 classes: ['Alopecia Areata', 'Contact Dermatitis', 'Folliculitis', 'Head Lice', 'Lichen Planus', 'Male Pattern Baldness', 'Psoriasis', 'Seborrheic Dermatitis', 'Telogen Effluvium', 'Tinea Capitis']
+2025-10-15 05:52:49,552 - INFO - Creating ResNet50 model with ImageNet pre-trained weights...
+2025-10-15 05:52:49,810 - INFO - Model created successfully
+2025-10-15 05:52:49,811 - INFO - Total parameters: 24,562,250
+2025-10-15 05:52:49,811 - INFO - Trainable parameters: 16,018,954
+2025-10-15 05:52:49,812 - INFO - Training setup completed
+2025-10-15 05:52:49,812 - INFO - Starting training for 25 epochs...
+2025-10-15 05:52:49,812 - INFO - Training on 9600 images
+2025-10-15 05:52:49,812 - INFO - Validating on 1200 images
+2025-10-15 05:52:49,834 - INFO - Epoch 1/25
+2025-10-15 05:52:49,835 - INFO - ----------------------------------------
+2025-10-15 06:15:32,251 - INFO - Train Loss: 0.7549 Acc: 0.7499
+2025-10-15 06:16:34,953 - INFO - Val Loss: 0.2247 Acc: 0.9233
+2025-10-15 06:16:34,977 - INFO - Epoch 1 completed in 1425s
+2025-10-15 06:16:34,978 - INFO - Best val Acc so far: 0.9233 at epoch 1
+2025-10-15 06:16:34,978 - INFO - Epoch 2/25
+2025-10-15 06:16:34,978 - INFO - ----------------------------------------
+2025-10-15 06:26:51,463 - INFO - Train Loss: 0.2482 Acc: 0.9232
+2025-10-15 06:27:58,424 - INFO - Val Loss: 0.0186 Acc: 0.9925
+2025-10-15 06:27:58,462 - INFO - Epoch 2 completed in 683s
+2025-10-15 06:27:58,462 - INFO - Best val Acc so far: 0.9925 at epoch 2
+2025-10-15 06:27:58,463 - INFO - Epoch 3/25
+2025-10-15 06:27:58,463 - INFO - ----------------------------------------
+2025-10-15 07:11:13,888 - INFO - Train Loss: 0.1468 Acc: 0.9550
+2025-10-15 07:12:52,123 - INFO - Val Loss: 0.0419 Acc: 0.9850
+2025-10-15 07:12:52,123 - INFO - Epoch 3 completed in 2694s
+2025-10-15 07:12:52,124 - INFO - Best val Acc so far: 0.9925 at epoch 2
+2025-10-15 07:12:52,124 - INFO - Epoch 4/25
+2025-10-15 07:12:52,124 - INFO - ----------------------------------------
+2025-10-15 15:08:38,620 - INFO - Train Loss: 0.1104 Acc: 0.9678
+2025-10-15 15:09:38,934 - INFO - Val Loss: 0.0496 Acc: 0.9867
+2025-10-15 15:09:38,934 - INFO - Epoch 4 completed in 28607s
+2025-10-15 15:09:38,935 - INFO - Best val Acc so far: 0.9925 at epoch 2
+2025-10-15 15:09:38,935 - INFO - Epoch 5/25
+2025-10-15 15:09:38,935 - INFO - ----------------------------------------
+2025-10-15 15:33:58,457 - INFO - Train Loss: 0.0937 Acc: 0.9730
+2025-10-15 15:37:50,928 - INFO - Val Loss: 0.0011 Acc: 1.0000
+2025-10-15 15:37:51,089 - INFO - Epoch 5 completed in 1692s
+2025-10-15 15:37:51,090 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 15:37:51,091 - INFO - Epoch 6/25
+2025-10-15 15:37:51,092 - INFO - ----------------------------------------
+2025-10-15 15:59:55,474 - INFO - Train Loss: 0.0763 Acc: 0.9784
+2025-10-15 16:03:08,825 - INFO - Val Loss: 0.0007 Acc: 1.0000
+2025-10-15 16:03:08,826 - INFO - Epoch 6 completed in 1518s
+2025-10-15 16:03:08,827 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 16:03:08,828 - INFO - Epoch 7/25
+2025-10-15 16:03:08,829 - INFO - ----------------------------------------
+2025-10-15 16:38:51,367 - INFO - Train Loss: 0.0707 Acc: 0.9788
+2025-10-15 16:40:46,760 - INFO - Val Loss: 0.0006 Acc: 1.0000
+2025-10-15 16:40:46,761 - INFO - Epoch 7 completed in 2258s
+2025-10-15 16:40:46,761 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 16:40:46,762 - INFO - Epoch 8/25
+2025-10-15 16:40:46,762 - INFO - ----------------------------------------
+2025-10-15 17:01:33,913 - INFO - Train Loss: 0.0188 Acc: 0.9945
+2025-10-15 17:02:29,312 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 17:02:29,312 - INFO - Epoch 8 completed in 1303s
+2025-10-15 17:02:29,312 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 17:02:29,313 - INFO - Epoch 9/25
+2025-10-15 17:02:29,313 - INFO - ----------------------------------------
+2025-10-15 17:13:52,478 - INFO - Train Loss: 0.0136 Acc: 0.9960
+2025-10-15 17:14:50,076 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 17:14:50,077 - INFO - Epoch 9 completed in 741s
+2025-10-15 17:14:50,077 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 17:14:50,077 - INFO - Epoch 10/25
+2025-10-15 17:14:50,077 - INFO - ----------------------------------------
+2025-10-15 17:30:44,197 - INFO - Train Loss: 0.0070 Acc: 0.9978
+2025-10-15 17:35:49,589 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 17:35:49,590 - INFO - Epoch 10 completed in 1260s
+2025-10-15 17:35:49,591 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 17:35:49,592 - INFO - Epoch 11/25
+2025-10-15 17:35:49,593 - INFO - ----------------------------------------
+2025-10-15 18:04:02,031 - INFO - Train Loss: 0.0109 Acc: 0.9973
+2025-10-15 18:05:49,216 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 18:05:49,217 - INFO - Epoch 11 completed in 1800s
+2025-10-15 18:05:49,218 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 18:05:49,219 - INFO - Epoch 12/25
+2025-10-15 18:05:49,219 - INFO - ----------------------------------------
+2025-10-15 19:10:55,145 - INFO - Train Loss: 0.0072 Acc: 0.9977
+2025-10-15 19:13:26,687 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 19:13:26,689 - INFO - Epoch 12 completed in 4057s
+2025-10-15 19:13:26,690 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 19:13:26,690 - INFO - Epoch 13/25
+2025-10-15 19:13:26,690 - INFO - ----------------------------------------
+2025-10-15 19:41:14,440 - INFO - Train Loss: 0.0040 Acc: 0.9988
+2025-10-15 19:43:44,726 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 19:43:44,728 - INFO - Epoch 13 completed in 1818s
+2025-10-15 19:43:44,728 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 19:43:44,729 - INFO - Epoch 14/25
+2025-10-15 19:43:44,730 - INFO - ----------------------------------------
+2025-10-15 20:15:34,026 - INFO - Train Loss: 0.0056 Acc: 0.9982
+2025-10-15 20:20:57,352 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 20:20:57,356 - INFO - Epoch 14 completed in 2233s
+2025-10-15 20:20:57,357 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 20:20:57,358 - INFO - Epoch 15/25
+2025-10-15 20:20:57,359 - INFO - ----------------------------------------
+2025-10-15 20:57:34,359 - INFO - Train Loss: 0.0065 Acc: 0.9977
+2025-10-15 21:00:11,740 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 21:00:11,741 - INFO - Epoch 15 completed in 2354s
+2025-10-15 21:00:11,741 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 21:00:11,742 - INFO - Epoch 16/25
+2025-10-15 21:00:11,742 - INFO - ----------------------------------------
+2025-10-15 21:26:07,667 - INFO - Train Loss: 0.0065 Acc: 0.9977
+2025-10-15 22:15:17,831 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-15 22:15:17,831 - INFO - Epoch 16 completed in 4506s
+2025-10-15 22:15:17,831 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-15 22:15:17,832 - INFO - Epoch 17/25
+2025-10-15 22:15:17,832 - INFO - ----------------------------------------
+2025-10-16 04:49:43,653 - INFO - Train Loss: 0.0033 Acc: 0.9989
+2025-10-16 04:51:46,872 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-16 04:51:46,872 - INFO - Epoch 17 completed in 23789s
+2025-10-16 04:51:46,872 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-16 04:51:46,873 - INFO - Epoch 18/25
+2025-10-16 04:51:46,873 - INFO - ----------------------------------------
+2025-10-16 05:15:10,079 - INFO - Train Loss: 0.0050 Acc: 0.9983
+2025-10-16 05:17:32,231 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-16 05:17:32,232 - INFO - Epoch 18 completed in 1545s
+2025-10-16 05:17:32,232 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-16 05:17:32,233 - INFO - Epoch 19/25
+2025-10-16 05:17:32,233 - INFO - ----------------------------------------
+2025-10-16 05:39:48,897 - INFO - Train Loss: 0.0037 Acc: 0.9991
+2025-10-16 05:42:17,634 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-16 05:42:17,635 - INFO - Epoch 19 completed in 1485s
+2025-10-16 05:42:17,635 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-16 05:42:17,636 - INFO - Epoch 20/25
+2025-10-16 05:42:17,636 - INFO - ----------------------------------------
+2025-10-16 06:06:35,120 - INFO - Train Loss: 0.0051 Acc: 0.9984
+2025-10-16 06:09:19,602 - INFO - Val Loss: 0.0000 Acc: 1.0000
+2025-10-16 06:09:19,604 - INFO - Epoch 20 completed in 1622s
+2025-10-16 06:09:19,604 - INFO - Best val Acc so far: 1.0000 at epoch 5
+2025-10-16 06:09:19,604 - INFO - Epoch 21/25
+2025-10-16 06:09:19,604 - INFO - ----------------------------------------
+2025-10-16 06:16:51,128 - ERROR - Training failed with error: DataLoader worker (pid(s) 25952, 5124, 15692, 28588) exited unexpectedly
