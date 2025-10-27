@@ -1,0 +1,55 @@
+# 🔧 DATASET STRUCTURE FIX
+# Add this cell AFTER Step 4 (Analyze Dataset) in your Colab notebook
+
+# Fix the dataset structure
+from pathlib import Path
+
+# Find the actual dataset folder (handles typo in folder name)
+data_root = Path('dataset')
+possible_dirs = list(data_root.glob('*'))
+print("Looking for dataset folder...")
+for d in possible_dirs:
+    print(f"  Found: {d}")
+    if 'skin' in d.name.lower() and d.is_dir():
+        data_dir = d
+        print(f"✅ Using: {data_dir}")
+        break
+
+# Look for train_set and test_set (with underscore!)
+train_dir = None
+test_dir = None
+
+for variant in ['train_set', 'train', 'Train_set', 'Train', 'training_set']:
+    potential = data_dir / variant
+    if potential.exists():
+        train_dir = potential
+        print(f"✅ Found training data: {train_dir}")
+        break
+
+for variant in ['test_set', 'test', 'Test_set', 'Test', 'testing_set']:
+    potential = data_dir / variant
+    if potential.exists():
+        test_dir = potential
+        print(f"✅ Found test data: {test_dir}")
+        break
+
+# If only test_set exists, we'll use it as training data and split it
+if test_dir and not train_dir:
+    print("\n⚠️ Only test_set found. Will use it as training data and split 80/20.")
+    train_dir = test_dir
+    test_dir = None
+
+# Verify we have data
+if train_dir and train_dir.exists():
+    classes = sorted([d.name for d in train_dir.iterdir() if d.is_dir()])
+    print(f"\n📊 Found {len(classes)} disease classes:")
+    total_images = 0
+    for i, cls in enumerate(classes, 1):
+        num_images = len(list((train_dir / cls).glob('*.[jp][pn][g]*'))) + \
+                     len(list((train_dir / cls).glob('*.webp')))
+        total_images += num_images
+        print(f"  {i}. {cls}: {num_images} images")
+    print(f"\n✅ Total images: {total_images}")
+else:
+    print("\n❌ ERROR: Could not find training data!")
+    print("Please check the dataset structure.")
