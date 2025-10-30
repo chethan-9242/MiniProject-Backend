@@ -1,0 +1,43 @@
+{
+  "id": "user_1761593129488_hbdqtv5p8_20251028_012957",
+  "user_id": "user_1761593129488_hbdqtv5p8",
+  "timestamp": "2025-10-28T01:29:57.697492",
+  "symptoms": [
+    {
+      "id": "1761595183320",
+      "name": "Anxiety",
+      "severity": "severe",
+      "duration": "More than 2 weeks"
+    }
+  ],
+  "analysis": {
+    "possible_conditions": [
+      {
+        "name": "Anxiety and Stress (Chittodvega)",
+        "probability": 49,
+        "description": "Mental agitation and excessive worry affecting nervous system and mind",
+        "ayurvedic_perspective": "Vata imbalance causing instability in mind and nervous system, affecting Prana Vata"
+      }
+    ],
+    "recommendations": {
+      "immediate_actions": [
+        "Practice Nadi Shodhana (alternate nostril breathing)",
+        "Drink warm chamomile or brahmi tea"
+      ],
+      "lifestyle_changes": [
+        "Establish consistent daily routine",
+        "Practice meditation for 15-20 minutes daily"
+      ],
+      "herbal_remedies": [
+        "Ashwagandha for stress and anxiety relief",
+        "Brahmi for mental clarity and calmness"
+      ],
+      "when_to_consult_doctor": "If anxiety is severe, interfering with daily life, or accompanied by suicidal thoughts"
+    },
+    "dosha_imbalance": {
+      "primary": "Vata",
+      "description": "Vata imbalance causing instability in mind and nervous system, affecting Prana Vata"
+    }
+  },
+  "notes": null
+}

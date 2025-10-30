@@ -1,0 +1,43 @@
+{
+  "id": "user_1761593129488_hbdqtv5p8_20251028_012708",
+  "user_id": "user_1761593129488_hbdqtv5p8",
+  "timestamp": "2025-10-28T01:27:08.830606",
+  "symptoms": [
+    {
+      "id": "1761595021663",
+      "name": "Nausea",
+      "severity": "moderate",
+      "duration": "3-7 days"
+    }
+  ],
+  "analysis": {
+    "possible_conditions": [
+      {
+        "name": "Digestive Disturbance (Agnimandya)",
+        "probability": 40,
+        "description": "Weak digestive fire leading to incomplete digestion and gas formation",
+        "ayurvedic_perspective": "Weakened Agni (digestive fire) with Vata causing gas and irregular function, Pitta causing acidity"
+      }
+    ],
+    "recommendations": {
+      "immediate_actions": [
+        "Sip warm ginger tea after meals",
+        "Avoid eating until digestion improves"
+      ],
+      "lifestyle_changes": [
+        "Eat at regular times daily",
+        "Make lunch the largest meal"
+      ],
+      "herbal_remedies": [
+        "Triphala for digestive regulation",
+        "Ginger, cumin, fennel tea (CCF tea)"
+      ],
+      "when_to_consult_doctor": "If pain is severe, persistent, or accompanied by vomiting, blood in stool, or significant weight loss"
+    },
+    "dosha_imbalance": {
+      "primary": "Vata-Pitta",
+      "description": "Weakened Agni (digestive fire) with Vata causing gas and irregular function, Pitta causing acidity"
+    }
+  },
+  "notes": null
+}

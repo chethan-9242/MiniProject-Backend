@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  # Backend API
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.simple
+    container_name: swasthvedha-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - FLAN_T5_DEVICE=cpu
+      - FLAN_T5_TORCH_DTYPE=float32
+      - DEBUG_MODE=false
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/models:/app/models
+      - ./backend/logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend (if you want to containerize it too)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: swasthvedha-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Optional: PostgreSQL database
+  database:
+    image: postgres:13
+    container_name: swasthvedha-db
+    environment:
+      - POSTGRES_DB=swasthvedha
+      - POSTGRES_USER=swasthvedha
+      - POSTGRES_PASSWORD=swasthvedha123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # Optional: Redis for caching
+  redis:
+    image: redis:7-alpine
+    container_name: swasthvedha-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  # n8n workflow automation (self-hosted)
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: swasthvedha-n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - WEBHOOK_URL=http://localhost:5678
+      - GENERIC_TIMEZONE=Asia/Kolkata
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+      # To use Postgres instead of default SQLite, uncomment and set envs below
+      # - DB_TYPE=postgresdb
+      # - DB_POSTGRESDB=n8n
+      # - DB_POSTGRES_HOST=database
+      # - DB_POSTGRES_PORT=5432
+      # - DB_POSTGRES_USER=swasthvedha
+      # - DB_POSTGRES_PASSWORD=swasthvedha123
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+    depends_on:
+      - database
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  # Persist n8n workflows and credentials
+  n8n_data:

@@ -1,0 +1,61 @@
+{
+  "id": "test_user_20251028_010119",
+  "user_id": "test_user",
+  "timestamp": "2025-10-28T01:01:19.090576",
+  "symptoms": [
+    {
+      "id": "1",
+      "name": "Headache",
+      "severity": "moderate",
+      "duration": "1-2 days"
+    },
+    {
+      "id": "2",
+      "name": "Stress",
+      "severity": "moderate",
+      "duration": "1-2 weeks"
+    }
+  ],
+  "analysis": {
+    "possible_conditions": [
+      {
+        "name": "Tension Headache (Shiroroga)",
+        "probability": 91,
+        "description": "Tension-type headache caused by stress, poor posture, or nervous system imbalance",
+        "ayurvedic_perspective": "Vata imbalance affecting the nervous system and causing constriction in head region"
+      },
+      {
+        "name": "Anxiety and Stress (Chittodvega)",
+        "probability": 35,
+        "description": "Mental agitation and excessive worry affecting nervous system and mind",
+        "ayurvedic_perspective": "Vata imbalance causing instability in mind and nervous system, affecting Prana Vata"
+      }
+    ],
+    "recommendations": {
+      "immediate_actions": [
+        "Apply warm sesame oil to scalp and temples",
+        "Practice deep breathing for 10 minutes",
+        "Practice Nadi Shodhana (alternate nostril breathing)",
+        "Drink warm chamomile or brahmi tea"
+      ],
+      "lifestyle_changes": [
+        "Maintain regular sleep-wake cycle",
+        "Practice stress management techniques (meditation, yoga)",
+        "Establish consistent daily routine",
+        "Practice meditation for 15-20 minutes daily"
+      ],
+      "herbal_remedies": [
+        "Brahmi (Bacopa) for nervous system support",
+        "Ashwagandha for stress relief",
+        "Ashwagandha for stress and anxiety relief",
+        "Brahmi for mental clarity and calmness"
+      ],
+      "when_to_consult_doctor": "If headaches are severe, sudden, or accompanied by vision changes, confusion, or neck stiffness"
+    },
+    "dosha_imbalance": {
+      "primary": "Vata",
+      "description": "Vata dosha imbalance is causing instability and irregularity in your body. This affects movement, circulation, and nervous system function, leading to headache, stress and related discomfort"
+    }
+  },
+  "notes": "Test save from API"
+}

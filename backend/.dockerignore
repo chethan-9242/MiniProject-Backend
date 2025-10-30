@@ -1,0 +1,48 @@
+# Files to exclude from Docker build
+# This makes Docker build faster
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large model files (if you don't want to include them in image)
+# models/*.pth
+# models/*.h5
+
+# Documentation
+*.md
+README.md
+
+# Test files
+tests/
+*_test.py

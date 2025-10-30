@@ -1,0 +1,43 @@
+{
+  "id": "user_1761593129488_hbdqtv5p8_20251028_025444",
+  "user_id": "user_1761593129488_hbdqtv5p8",
+  "timestamp": "2025-10-28T02:54:44.211263",
+  "symptoms": [
+    {
+      "id": "1761600279077",
+      "name": "Diarrhea",
+      "severity": "moderate",
+      "duration": "1-2 days"
+    }
+  ],
+  "analysis": {
+    "possible_conditions": [
+      {
+        "name": "Diarrhea (Atisara)",
+        "probability": 43,
+        "description": "Frequent loose or watery stools due to digestive system irritation",
+        "ayurvedic_perspective": "Pitta causing heat and inflammation in digestive tract, with Vata creating irregular movement"
+      }
+    ],
+    "recommendations": {
+      "immediate_actions": [
+        "Drink plenty of fluids (ORS, coconut water, rice water)",
+        "Eat BRAT diet (Banana, Rice, Applesauce, Toast)"
+      ],
+      "lifestyle_changes": [
+        "Rest and avoid strenuous activity",
+        "Maintain strict hand hygiene"
+      ],
+      "herbal_remedies": [
+        "Pomegranate peel powder with honey",
+        "Kutaja (Holarrhena) for intestinal health"
+      ],
+      "when_to_consult_doctor": "If diarrhea persists for more than 2 days, shows blood or mucus, or causes severe dehydration"
+    },
+    "dosha_imbalance": {
+      "primary": "Pitta-Vata",
+      "description": "Pitta causing heat and inflammation in digestive tract, with Vata creating irregular movement"
+    }
+  },
+  "notes": null
+}

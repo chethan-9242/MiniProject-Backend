@@ -1,0 +1,69 @@
+# Reduce Docker build context as much as possible
+
+# VCS
+.git
+.gitignore
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.cache/
+
+# Python / Backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env/Secrets
+.env
+.env.*
+secrets.json
+
+# Docker/Compose docs and local files (keep the actual Dockerfiles)
+.dockerignore
+
+# Generated logs and data
+logs/
+*.log
+/data/
+/models/
+/tmp/
+/temp/
+
+# Large artifacts and archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.csv
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+
+# Docs (keep top-level README)
+**/*.md
+!README.md
+
+# Keep compose and Dockerfiles
+!Dockerfile*
+!docker-compose*.yml
