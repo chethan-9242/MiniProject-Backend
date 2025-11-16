@@ -34,8 +34,8 @@ interface AuthProviderProps {
   children: React.ReactNode;
 }
 
-const API_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8000').replace(/\/$/, '');
-const AUTH_MODE = (process.env.REACT_APP_AUTH_MODE || 'firebase') as 'firebase' | 'backend';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
+const AUTH_MODE = (import.meta.env.VITE_AUTH_MODE || 'firebase') as 'firebase' | 'backend';
 
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {

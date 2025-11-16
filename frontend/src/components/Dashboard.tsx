@@ -4,7 +4,6 @@ import {
   Heart, 
   Brain, 
   Shield, 
-  MessageCircle, 
   Sparkles, 
   Leaf,
   User,
@@ -12,7 +11,9 @@ import {
   Bell,
   Menu,
   X,
-  Scissors
+  Scissors,
+  Database,
+  FileText
 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { useAuth } from '../contexts/AuthContext';
@@ -25,6 +26,8 @@ import SkinDiseaseDetection from './modules/SkinDiseaseDetection';
 import PersonalizedRecommendations from './modules/PersonalizedRecommendations';
 import HairScalpDisorders from './modules/HairScalpDisorders';
 import FloatingChat from './FloatingChat';
+import BlockchainStatus from './BlockchainStatus';
+import MedicalRecordsViewer from './MedicalRecordsViewer';
 
 interface ModuleCardProps {
   icon: React.ElementType;
@@ -102,6 +105,22 @@ const Dashboard: React.FC = () => {
       icon: Sparkles,
       color: 'from-yellow-500 to-orange-600',
       component: PersonalizedRecommendations
+    },
+    {
+      id: 'blockchain-status',
+      title: 'Blockchain Status',
+      description: 'Monitor blockchain and IPFS connectivity · Real-time system health · Transaction tracking',
+      icon: Database,
+      color: 'from-purple-500 to-indigo-600',
+      component: BlockchainStatus
+    },
+    {
+      id: 'medical-records',
+      title: 'Medical Records',
+      description: 'View blockchain-stored medical records · IPFS data access · Complete audit trail',
+      icon: FileText,
+      color: 'from-indigo-500 to-blue-600',
+      component: () => <MedicalRecordsViewer patientId={user?.email || 'demo-user'} requesterAddress="0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6" />
     }
   ];
 

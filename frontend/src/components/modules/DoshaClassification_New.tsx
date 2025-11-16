@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, ChevronRight, ChevronLeft, BarChart3, User, CheckCircle, AlertCircle } from 'lucide-react';
 import axios from 'axios';
 
-const API_URL = (process.env.REACT_APP_API_URL || 'http://localhost:8000').replace(/\/$/, '');
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 interface Question {
   id: string;

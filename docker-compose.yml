@@ -13,10 +13,18 @@ services:
       - FLAN_T5_DEVICE=cpu
       - FLAN_T5_TORCH_DTYPE=float32
       - DEBUG_MODE=false
+      - BLOCKCHAIN_RPC_URL=http://blockchain-node:8545
+      - IPFS_API_URL=http://ipfs:5001
+      - IPFS_GATEWAY_URL=http://ipfs:8080
+      - BLOCKCHAIN_PRIVATE_KEY=0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
     volumes:
       - ./backend/data:/app/data
       - ./backend/models:/app/models
       - ./backend/logs:/app/logs
+      - ./backend/encryption_keys:/app/encryption_keys
+    depends_on:
+      - blockchain-node
+      - ipfs
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -89,7 +97,39 @@ services:
       - database
     restart: unless-stopped
 
+  # Blockchain Node (Hardhat Network)
+  blockchain-node:
+    image: node:18-alpine
+    container_name: swasthvedha-blockchain
+    working_dir: /app
+    command: sh -c "npm install && npx hardhat node --hostname 0.0.0.0 --port 8545"
+    ports:
+      - "8545:8545"
+    volumes:
+      - ./blockchain:/app
+      - blockchain_data:/app/.hardhat
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+  # IPFS Node
+  ipfs:
+    image: ipfs/go-ipfs:latest
+    container_name: swasthvedha-ipfs
+    ports:
+      - "4001:4001"     # P2P port
+      - "5001:5001"     # API port
+      - "8080:8080"     # Gateway port
+    volumes:
+      - ipfs_data:/data/ipfs
+    environment:
+      - IPFS_PROFILE=server
+    restart: unless-stopped
+
 volumes:
   postgres_data:
   # Persist n8n workflows and credentials
   n8n_data:
+  # Blockchain and IPFS data
+  blockchain_data:
+  ipfs_data:
